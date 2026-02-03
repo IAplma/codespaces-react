@@ -1,8 +1,34 @@
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      window.open(
+        `https://wikipedia.org/wiki/${encodeURIComponent(searchQuery)}`,
+        '_blank'
+      );
+      setSearchQuery('');
+    }
+  };
+
   return (
     <div className="App">
+      <div className="search-bar-container">
+        <form onSubmit={handleSearch} className="wikipedia-search">
+          <input
+            type="text"
+            placeholder="Rechercher sur Wikipedia..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+          <button type="submit" className="search-button">Rechercher</button>
+        </form>
+      </div>
       <header className="App-header">
         <img src="Octocat.png" className="App-logo" alt="logo" />
         <p>
