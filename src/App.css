@@ -2,6 +2,62 @@
   text-align: center;
 }
 
+.search-bar-container {
+  background-color: #1a1a2e;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.wikipedia-search {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: white;
+  color: #282c34;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px rgba(97, 218, 251, 0.3);
+}
+
+.search-button {
+  padding: 10px 25px;
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+  background-color: #4fa8c5;
+  transform: scale(1.05);
+}
+
+.search-button:active {
+  transform: scale(0.98);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
